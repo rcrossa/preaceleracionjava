@@ -15,4 +15,4 @@ You need to install:
 
                     *Mysql Server.
 
-                    *A program that you can program in Java such as Eclipse o Intellij Idea for example.
+                    *A program that you allow write code in java, such as Eclipse o Intellij Idea.
