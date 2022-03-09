@@ -8,10 +8,11 @@ The content was created in Java.
 
 ## Installation
 You need to install:
-*JDK(Java).
 
-*Maven.
+                    *JDK(Java).
 
-*Mysql Server.
+                    *Maven.
 
-*A program that you can program in Java such as Eclipse o Intellij Idea for example.
+                    *Mysql Server.
+
+                    *A program that you can program in Java such as Eclipse o Intellij Idea for example.
