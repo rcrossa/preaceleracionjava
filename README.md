@@ -7,4 +7,8 @@ This project is the first part of alkemy training.
 The content was created in Java.
 
 ## Installation
-You need to install Java jdk, maven, a mysql database and Intellij Idea and after that you can import the project.
+You need to install:
+                    *JDK(Java).
+                    *Maven.
+                    *Mysql Server.
+                    *A program that you can program in Java such as Eclipse o Intellij Idea for example.
