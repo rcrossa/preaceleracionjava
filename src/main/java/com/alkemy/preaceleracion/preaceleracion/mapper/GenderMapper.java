@@ -1,0 +1,38 @@
+package com.alkemy.preaceleracion.preaceleracion.mapper;
+
+import com.alkemy.preaceleracion.preaceleracion.dto.GenderDTO;
+import com.alkemy.preaceleracion.preaceleracion.entity.GenderEntity;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class GenderMapper {
+
+    public GenderEntity genderDTO2Entity(GenderDTO dto){
+        GenderEntity genderEntity = new GenderEntity();
+        genderEntity.setName(dto.getName());
+        genderEntity.setImage(dto.getImage());
+        genderEntity.setImage(dto.getFilm());
+        return genderEntity;
+    }
+
+    public GenderDTO genderEntity2DTO(GenderEntity entity){
+        GenderDTO dto = new GenderDTO();
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setImage(entity.getImage());
+        dto.setFilm(entity.getFilm());
+        return dto;
+    }
+
+    public List<GenderDTO> genderEntityList2DTOList(List<GenderEntity> entities) {
+        List<GenderDTO> dtos = new ArrayList<>();
+        for (GenderEntity entity : entities){
+            dtos.add(this.genderEntity2DTO(entity));
+        }
+        return dtos;
+    }
+
+}
