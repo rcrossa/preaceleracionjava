@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 public class FilmService {
 
     public FilmDTO save(FilmDTO dto){
-        System.out.println("Save film");
         return  dto;
     }
 }
