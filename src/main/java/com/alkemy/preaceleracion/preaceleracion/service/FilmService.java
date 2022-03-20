@@ -3,10 +3,16 @@ package com.alkemy.preaceleracion.preaceleracion.service;
 import com.alkemy.preaceleracion.preaceleracion.dto.FilmDTO;
 import org.springframework.stereotype.Service;
 
-@Service
-public class FilmService {
+import java.util.List;
 
-    public FilmDTO save(FilmDTO dto){
-        return  dto;
-    }
+@Service
+public interface FilmService {
+
+    FilmDTO save(FilmDTO dto);
+
+    List<FilmDTO> getAllfilms();
+
+    void delete(Long id);
+
+    FilmDTO editFilm(Long id)
 }

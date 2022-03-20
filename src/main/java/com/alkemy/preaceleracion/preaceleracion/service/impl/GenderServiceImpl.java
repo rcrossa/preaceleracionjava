@@ -31,4 +31,8 @@ public class GenderServiceImpl implements GenderService {
         List<GenderDTO> result = genderMapper.genderEntityList2DTOList(entities);
         return result;
     }
+
+    public void delete(Long id) {
+        this.genderRepository.deleteById(id);
+    }
 }

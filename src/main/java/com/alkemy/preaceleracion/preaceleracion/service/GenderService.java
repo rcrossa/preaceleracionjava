@@ -5,7 +5,10 @@ import com.alkemy.preaceleracion.preaceleracion.dto.GenderDTO;
 import java.util.List;
 
 public interface GenderService {
+
      GenderDTO save(GenderDTO dto);
 
     List<GenderDTO> getAllGenders();
+
+    void delete(Long id);
 }

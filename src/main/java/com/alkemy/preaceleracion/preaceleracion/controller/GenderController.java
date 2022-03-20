@@ -30,4 +30,10 @@ public class GenderController {
         GenderDTO genderSave = genderService.save(gender);
         return ResponseEntity.status(HttpStatus.CREATED).body(genderSave);
     }
+
+    @DeleteMapping("/{id}")
+    public  ResponseEntity<Void> delete(@PathVariable Long id){
+        this.genderService.delete(id);
+        return  ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }

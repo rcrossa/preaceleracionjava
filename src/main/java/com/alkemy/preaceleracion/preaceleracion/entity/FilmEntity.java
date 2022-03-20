@@ -1,11 +1,13 @@
 package com.alkemy.preaceleracion.preaceleracion.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "film")
@@ -18,23 +20,31 @@ public class FilmEntity {
     private String image;
     private String title;
     @Column(name = "date_create")
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dateCreate;
 
-    private Long rating;
+    private int rating;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "gender_id", insertable = false, updatable = false)
     private GenderEntity gender;
 
     @Column(name = "gender_id", nullable = false)
     private Long gender_id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "character_id", insertable = false, updatable = false)
-    private CharacterEntity character;
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "film_character", joinColumns = @JoinColumn(name = "film_id" ),
+            inverseJoinColumns = @JoinColumn(name = "character_id"))
+    private Set<CharacterEntity> characters = new HashSet<>();
 
-    @Column(name = "character_id", nullable = false)
-    private Long character_id;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "character_id", insertable = false, updatable = false)
+//    private CharacterEntity character;
+//
+//    @Column(name = "character_id", nullable = false)
+//    private Long character_id;
 
 }
